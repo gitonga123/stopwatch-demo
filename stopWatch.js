@@ -44,6 +44,7 @@ function resetFunction() {
 		recordList.innerHTML ='';
 		start.innerHTML = 'Start';
 		captureTime ='';
+		time = 0;
 		clearInterval(timer);
 }
 
