@@ -43,11 +43,14 @@ function resetFunction() {
 		displayTime.innerHTML ='0';
 		recordList.innerHTML ='';
 		start.innerHTML = 'Start';
+		captureTime ='';
+		clearInterval(timer);
 }
 
 function recordFunction() {
 	captureTime = time / 100;
-	recordList.innerHTML += captureTime + '<br />';
+
+	recordList.innerHTML += `<li>${captureTime}</li>`;
 }
 
 function toggle() {
