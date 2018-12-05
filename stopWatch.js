@@ -21,23 +21,33 @@ function startTimer() {
 }
 
 function setUp() {
+
 	displayTime.innerHTML = time;
+
 	start.addEventListener('click', function() {
 		toggle();
 	});
 
 	resetTimer.addEventListener('click', function() {
+		resetFunction();
+	});
+
+	recordTimer.addEventListener('click', function() {
+		recordFunction();
+	});
+}
+
+function resetFunction() {
 		clearInterval(timer);
 		startWatch = true;
 		displayTime.innerHTML ='0';
 		recordList.innerHTML ='';
 		start.innerHTML = 'Start';
-	});
+}
 
-	recordTimer.addEventListener('click', function() {
-		captureTime = time / 100;
-		recordList.innerHTML += captureTime + '<br />';
-	});
+function recordFunction() {
+	captureTime = time / 100;
+	recordList.innerHTML += captureTime + '<br />';
 }
 
 function toggle() {
@@ -49,5 +59,18 @@ function toggle() {
 		start.innerHTML = 'Start';
 		clearInterval(timer);
 		startWatch = true;
+	}
+}
+
+document.addEventListener('keypress', handleKeyPress);
+
+function handleKeyPress(event) {
+	var keyPressed = event.key.toLowerCase();
+	if (keyPressed === 's') {
+		toggle();
+	} else if (keyPressed === 't') {
+		recordFunction();
+	} else if (keyPressed === 'r') {
+		resetFunction();
 	}
 }
