@@ -1,11 +1,17 @@
 // global variables
-var start = true;
-var stop  = false;
-var reset = false;
-var record = false;
+var start = document.getElementById("startStop");
+var startWatch = true;
+var stopWatch = true;
 
-start();
+start.addEventListener("click", function() {
+	toggle();
+});
 
-function start() {
-	
+function toggle() {
+	if (startWatch) {
+		start.innerHTML = "Stop";
+			startWatch = false;
+	} else {
+		start.innerHTML = "Start";
+	}
 }
