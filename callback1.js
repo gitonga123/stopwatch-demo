@@ -27,7 +27,11 @@ var minus = function(num1, num3) {
 }
 
 var calculator = function(num1, num2, callback) {
-  return add(num1, num2);
+  if (typeof callback === "function"){
+      return add(num1, num2);
+  } else {
+    return false;
+  }
 }
 
 console.log(calculator(3, 5, add));
