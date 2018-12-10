@@ -37,3 +37,4 @@ var calculator = function(num1, num2, callback) {
 console.log(calculator(3, 5, add));
 console.log(calculator(3, 5, product));
 console.log(calculator(7, 5, minus));
+console.log(calculator(5, 6, 'my-name'));
